@@ -162,12 +162,12 @@ p {
     }
 
         .card > .card__description, .card > .card__image {
-            width: 36%;
-             margin: 32px auto 0 auto;
+            width: 80%;
+             margin: 10px auto 0 auto;
         }
 
         .card .card__image img {
-            width: 60%;
-            margin: 24px auto 0 auto;
+            width: 100%;
+            margin: 0px auto 0 auto;
         }
 }

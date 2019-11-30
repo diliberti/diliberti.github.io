@@ -105,11 +105,11 @@ p {
         font-weight: bold;
     }
 
-    .card > .card__description {
+    .card > .card__description, .card > .card__image.inverse {
         width: 60%;
     }
 
-    .card > .card__image {
+    .card > .card__image, .card > .card__description.inverse {
         width: 40%;
     }
 

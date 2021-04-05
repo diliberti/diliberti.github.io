@@ -12,6 +12,7 @@ body {
     margin: 0;
   text-align: justify;
   text-justify: inter-word;
+  font-family: 'HelveticaNeue-Light', Helvetica, Arial, sans-serif
 }
 
 }
@@ -59,17 +60,17 @@ a, a:hover, a:visited {
 h1, h2, h3 {
     margin-top: 0;
     margin-bottom: 40px;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: normal
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 0px;
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 0
 }
@@ -110,7 +111,7 @@ p {
 
     .card li {
         font-size: 20px;
-        font-weight: bold;
+ /*       font-weight: bold;*/
     }
 
     .card > .card__description, .card > .card__image.inverse {

@@ -40,6 +40,12 @@ main.page {
     margin: 80px auto 0 auto;
 }
 
+main.lpage {
+    width: 800px;
+    height: auto;
+    margin: 80px auto 0 auto;
+}
+
 main > .card__wrapper {
     width: 600px;
 }
@@ -161,6 +167,12 @@ p {
     }
 
     main.page {
+        width: 100%;
+        margin: 32px auto 0 auto;
+    }
+
+
+        main.lpage {
         width: 100%;
         margin: 32px auto 0 auto;
     }

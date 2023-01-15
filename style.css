@@ -4,7 +4,7 @@
 
 html {
     height: 100%;
-     background-color: #fffbe1;
+     background-color: #fabb5c;
 } 
 
 
@@ -64,7 +64,7 @@ main .page__title-container {
 
 /* Spacing */
 a, a:hover, a:visited {
-    color: #012e4a;
+    color: #001826;
     text-decoration: none;
     padding: 4px 0;
 }
@@ -73,7 +73,7 @@ h1, h2, h3 {
     margin-top: 0;
     margin-bottom: 0px;
     font-size: 30px;
-    font-weight: normal
+    font-weight: normal;
 }
 
 h2 {

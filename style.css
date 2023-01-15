@@ -64,7 +64,7 @@ main .page__title-container {
 
 /* Spacing */
 a, a:hover, a:visited {
-    color: rgb(0, 46, 115);
+    color: #012e4a;
     text-decoration: none;
     padding: 4px 0;
 }

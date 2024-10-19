@@ -1,26 +1,34 @@
-* {
-}
-
-
-html {
-    height: 100%;
-     background-color: #FFF7E2;
-} 
-
-
-
-
 body {
     padding: 0;
     margin: 0;
   text-align: justify;
   text-justify: inter-word;
- font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif
+ font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
+  background-color: #1B2631;
+  color: #EBDEF0;
+
+  a:link {
+  color: #EBDEF0;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color:#EBDEF0;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #EBDEF0;
+  background-color: transparent;
+  text-decoration: none;
+}
 }
 
 
 
-}
+
 
     body.home__body {
         min-height: 100%;
@@ -34,26 +42,26 @@ main.home {
     justify-content: center;
     height: 100%;
     margin: 18%;
-    color: #091A22;
+   
 }
 
 main.page {
     width: 600px;
     height: auto;
     margin: 80px auto 0 auto;
-    color: #091A22;
+   
 }
 
 main.lpage {
     width: 800px;
     height: auto;
     margin: 80px auto 0 auto;
-    color: #091A22;
+   
 }
 
 main > .card__wrapper {
     width: 600px;
-    color: #091A22;
+   
 }
 
 main .page__title-container {
@@ -63,12 +71,12 @@ main .page__title-container {
 
     main .page__title-container a {
         margin-left: auto
-        color: #091A22;
+       
     }
 
 /* Spacing */
 a, a:hover, a:visited {
-    color: #091A22;
+   
     text-decoration: none;
     padding: 4px 0;
 }
@@ -78,7 +86,7 @@ h1, h2, h3 {
     margin-bottom: 0px;
     font-size: 30px;
     font-weight: normal;
-    color: #091A22;
+   
 }
 
 h2 {

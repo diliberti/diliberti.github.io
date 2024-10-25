@@ -4,8 +4,48 @@ body {
   text-align: justify;
   text-justify: inter-word;
  font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
+  background-color: #FDEBD0;
+  color: #1B2631;
+
+
+button {  padding: 0;
+color: #1B2631;
+border: none;
+background: none;}
+
+
+  a:link {
+  color: #1B2631;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color:#1B2631;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5D6D7E;
+  background-color: transparent;
+  text-decoration: none;
+}
+}
+
+
+
+.dark-mode {
   background-color: #17202A;
   color: #EBDEF0;
+
+
+
+button {  padding: 0;
+  color: #EBDEF0;
+border: none;
+background: none;}
+
 
   a:link {
   color: #EBDEF0;
@@ -25,6 +65,9 @@ a:hover {
   text-decoration: none;
 }
 }
+
+
+
 
     body.home__body {
         min-height: 100%;

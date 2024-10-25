@@ -35,7 +35,7 @@ a:hover {
 
 
 @media (prefers-color-scheme: dark) {
-  .body.adaptive {
+  body{
   background-color: #17202A;
   color: #EBDEF0;
 

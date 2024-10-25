@@ -8,10 +8,10 @@ body {
   color: #1B2631;
 
 
-button {  padding: 0;
+/*button {  padding: 0;
 color: #1B2631;
 border: none;
-background: none;}
+background: none;}*/
 
 
   a:link {
@@ -34,7 +34,33 @@ a:hover {
 }
 
 
+@media (prefers-color-scheme: dark) {
+  .body.adaptive {
+  background-color: #17202A;
+  color: #EBDEF0;
 
+  a:link {
+  color: #EBDEF0;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color:#EBDEF0;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c0b5c4;
+  background-color: transparent;
+  text-decoration: none;
+}
+  }
+}
+
+
+/*
 .dark-mode {
   background-color: #17202A;
   color: #EBDEF0;
@@ -64,7 +90,7 @@ a:hover {
   background-color: transparent;
   text-decoration: none;
 }
-}
+}*/
 
 
 

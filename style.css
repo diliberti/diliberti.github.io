@@ -8,12 +8,6 @@ body {
   color: #1B2631;
 
 
-/*button {  padding: 0;
-color: #1B2631;
-border: none;
-background: none;}*/
-
-
   a:link {
   color: #1B2631;
   background-color: transparent;
@@ -58,40 +52,6 @@ a:hover {
 }
   }
 }
-
-
-/*
-.dark-mode {
-  background-color: #17202A;
-  color: #EBDEF0;
-
-
-
-button {  padding: 0;
-  color: #EBDEF0;
-border: none;
-background: none;}
-
-
-  a:link {
-  color: #EBDEF0;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color:#EBDEF0;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #c0b5c4;
-  background-color: transparent;
-  text-decoration: none;
-}
-}*/
-
 
 
 

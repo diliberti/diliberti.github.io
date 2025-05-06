@@ -27,7 +27,7 @@
                         <p><a href="mailto:diliberti.math@gmail.com">diliberti.math@gmail.com</a></p>
                         <p class="card__icons">
                             <a href="https://scholar.google.it/citations?user=JKoZC1QAAAAJ&hl=en"><i class="ai ai-google-scholar ai"></i></a>
-                              <a href="https://koalendar.com/e/meet-with-ivan-koai2M4V"><i class="fa-solid fa-calendar-check"></i></a> 
+                    <a href="#" id="koalendar-trigger"><i class="fa-solid fa-calendar-check"></i></a>
                             <a href="cv.pdf"><i class="ai ai-cv"></i></a>
 
                             <a href="https://www.youtube.com/watch?v=LIUoFuSuvTM"><img src="flag3.png" alt="support" height="15" width="15" /></a> 
@@ -87,6 +87,32 @@
         false
         );
     </script>
+
+
+
+    <!-- Koalendar loader -->
+<script>
+  window.Koalendar = window.Koalendar || function () {
+    (Koalendar.props = Koalendar.props || []).push(arguments);
+  };
+</script>
+<script async src="https://koalendar.com/assets/widget.js"></script>
+
+
+
+<!-- Widget setup and trigger -->
+<script>
+  Koalendar('config', {
+    url: "https://koalendar.com/e/meet-with-ivan-koai2M4V"
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('koalendar-trigger').addEventListener('click', function (e) {
+      e.preventDefault(); // prevent link navigation
+      Koalendar('open');
+    });
+  });
+</script>
 <!--                     <script>
                     function myFunction() {
                     var element = document.body;

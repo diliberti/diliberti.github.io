@@ -91,14 +91,11 @@
 
 
   <!-- Floating Schedule Widget -->
-<!-- Trigger icon -->
-
-
 <style>
   #schedule-widget-container {
     position: fixed;
     z-index: 9999;
-    top: 10%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
     width: 780px;
@@ -117,6 +114,7 @@
     width: 100%;
     height: 100%;
     border: none;
+    transform-origin: top left;
   }
 
   #schedule-widget-container.show {
@@ -142,6 +140,17 @@
     z-index: 10;
   }
 
+  /* Responsive scaling for mobile */
+  @media (max-width: 799px) {
+    #schedule-widget-container {
+      width: 95vw;
+      height: 80vh;
+    }
+
+    #schedule-widget-container iframe {
+      transform: scale(0.95);
+    }
+  }
 </style>
 
 <div id="schedule-widget-container">

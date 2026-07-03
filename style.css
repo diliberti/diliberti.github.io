@@ -28,6 +28,97 @@ a:hover {
 }
 
 
+
+/* Expandable sections */
+
+.expandable {
+  margin: 1.5rem 0 2rem;:contentReference[oaicite:1]{index=1}49, 0.35);
+  border-bottom: 1px solid rgba(27, 38, 49, 0.35);
+}
+
+.expandable > summary {
+  position: relative;
+  display: block;
+  padding: 0.85rem 2rem 0.85rem 0;
+
+  cursor: pointer;
+  list-style: none;
+
+  font-size: 20px;
+  line-height: 1.25;
+  text-align: left;
+
+  transition: color 0.15s ease;
+}
+
+/* Remove the browser's default triangle */
+.expandable > summary::-webkit-details-marker {
+  display: none;
+}
+
+.expandable > summary::marker {
+  content: "";
+}
+
+/* Custom opening/closing symbol */
+.expandable > summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1;
+
+  transform: translateY(-50%);
+}
+
+.expandable[open] > summary::after {
+  content: "−";
+}
+
+.expandable > summary:hover {
+  color: #5D6D7E;
+}
+
+.expandable > summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Expanded text */
+.expandable__content {
+  margin: 0 0 0.9rem 0;
+  padding: 0.05rem 0 0.05rem 1rem;
+
+  border-left: 2px solid rgba(27, 38, 49, 0.3);
+}
+
+.expandable__content p:first-child {
+  margin-top: 0.4rem;
+}
+
+.expandable__content p:last-child {
+  margin-bottom: 0.4rem;
+}
+
+/* Match the existing dark mode */
+@media (prefers-color-scheme: dark) {
+  .expandable {
+    border-color: rgba(235, 222, 240, 0.35);
+  }
+
+  .expandable > summary:hover {
+    color: #c0b5c4;
+  }
+
+  .expandable__content {
+    border-left-color: rgba(235, 222, 240, 0.3);
+  }
+}
+
+
 @media (prefers-color-scheme: dark) {
   body{
   background-color: #17202A;

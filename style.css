@@ -1,4 +1,4 @@
-/* Day palette: softened vermilion and cream. */
+/* Colour palettes for day and night */
 :root {
   color-scheme: light;
   --page-background: #C6533F;
@@ -15,7 +15,6 @@
   --frame-shadow: rgb(95 26 18 / 8%);
 }
 
-/* Night palette: pure black, warm ivory, and muted gold. */
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
@@ -34,6 +33,7 @@
   }
 }
 
+/* Shared typography, lists, and links */
 body {
   padding: 0;
   margin: 0;
@@ -42,6 +42,59 @@ body {
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
   background-color: var(--page-background);
   color: var(--text-color);
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: 0px;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+body h1,
+body h2,
+body h3 {
+  color: var(--heading-color);
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+ul + h3 {
+  margin-top: 20px;
+}
+
+p {
+  line-height: 1.2em;
+  font-size: 18px;
+}
+
+ul {
+  list-style-position: unset;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ul__links p {
+  margin: 0;
+}
+
+.ul__links p:last-of-type {
+  font-size: 10px;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  padding: 4px 0;
 }
 
 body a:link,
@@ -60,12 +113,6 @@ body a:focus-visible {
   outline-offset: 4px;
 }
 
-body h1,
-body h2,
-body h3 {
-  color: var(--heading-color);
-}
-
 body h1 a:link,
 body h1 a:visited,
 body h2 a:link,
@@ -81,7 +128,28 @@ body h3 a:hover {
   color: var(--hover-color);
 }
 
-/* Frame the home, standard, and wider page layouts. */
+/* Page widths, title rows, and the shared frame */
+main.page {
+  width: 700px;
+  height: auto;
+  margin: 80px auto 0 auto;
+}
+
+main.lpage {
+  width: 800px;
+  height: auto;
+  margin: 80px auto 0 auto;
+}
+
+main .page__title-container {
+  display: flex;
+  width: 100%;
+}
+
+main .page__title-container a {
+  margin-left: auto;
+}
+
 .home .card__wrapper,
 .page .page__container,
 main.lpage {
@@ -105,7 +173,75 @@ main.lpage::before {
   z-index: -1;
 }
 
-/* Expandable sections */
+/* Homepage layout and link states */
+body.home__body {
+  min-height: 100%;
+  height: 100%;
+}
+
+main.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin: 14%;
+}
+
+main > .card__wrapper {
+  width: 600px;
+}
+
+.home ul {
+  margin: 40px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+}
+
+.card li {
+  font-size: 20px;
+}
+
+.card > .card__description, .card > .card__image.inverse {
+  width: 60%;
+}
+
+.card > .card__image, .card > .card__description.inverse {
+  width: 40%;
+}
+
+.card .card__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.card .card__info p {
+  margin: 0;
+}
+
+.card p.card__icons {
+  margin: 5px 0;
+}
+
+.card p.card__icons a {
+  margin-right: 5px;
+}
+
+.home a:any-link {
+  color: var(--text-color);
+}
+
+.home a:any-link:hover,
+.home a:any-link:focus-visible,
+.home a:any-link:active {
+  color: var(--link-color);
+}
+
+/* Expandable sections and paper links */
 .expandable {
   margin: 1.5rem 0 2rem;
   border-bottom: 1px solid var(--section-border);
@@ -123,7 +259,6 @@ main.lpage::before {
   transition: color 0.15s ease;
 }
 
-/* Remove the browser's default triangle. */
 .expandable > summary::-webkit-details-marker {
   display: none;
 }
@@ -132,7 +267,6 @@ main.lpage::before {
   content: "";
 }
 
-/* Custom opening/closing symbol */
 .expandable > summary::after {
   content: "+";
   position: absolute;
@@ -171,201 +305,58 @@ main.lpage::before {
   margin-bottom: 0.4rem;
 }
 
-/* Keep paper links visibly identifiable in either palette. */
 body .expandable__content a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
-    body.home__body {
-        min-height: 100%;
-        height: 100%;
-
-    }
-
-main.home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    margin: 14%;
-   
-}
-
-main.page {
-    width: 700px;
-    height: auto;
-    margin: 80px auto 0 auto;
-   
-}
-
-main.lpage {
-    width: 800px;
-    height: auto;
-    margin: 80px auto 0 auto;
-   
-}
-
-main > .card__wrapper {
-    width: 600px;
-   
-}
-
-main .page__title-container {
-    display: flex;
-    width: 100%
-}
-
-    main .page__title-container a {
-        margin-left: auto
-       
-    }
-
-/* Spacing */
-a, a:hover, a:visited {
-   
-    text-decoration: none;
-    padding: 4px 0;
-}
-
-h1, h2, h3 {
-    margin-top: 0;
-    margin-bottom: 0px;
-    font-size: 30px;
-    font-weight: normal;
-   
-}
-
-h2 {
-    font-size: 20px;
-    margin-bottom: 0px;
-}
-
-h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 0
-}
-
-ul + h3 {
-    margin-top: 20px;
-}
-
-ul {
-    list-style-position: unset;
-    list-style-type: none;
-    padding: 0;
-    margin: 0
-}
-
-.ul__links p {
-    margin: 0
-}
-
-    .ul__links p:last-of-type {
-        font-size: 10px;
-    }
-
-.home ul {
-    margin: 40px 0;
-}
-
-p {
-    line-height: 1.2em;
-    font-size: 18px;
-}
-
-/* Home page */
-.card {
-    display: flex;
-    flex-direction: row;
-}
-
-    .card li {
-        font-size: 20px;
- /*       font-weight: bold;*/
-    }
-
-    .card > .card__description, .card > .card__image.inverse {
-        width: 60%;
-    }
-
-    .card > .card__image, .card > .card__description.inverse {
-        width: 40%;
-    }
-
-    .card .card__image img {
-        display: block;
-        width: 100%;
-        height: auto;
-        border-radius: 16px;
-    }
-
-    .card .card__info p {
-        margin: 0
-    }
-
-    .card p.card__icons {
-        margin: 5px 0
-    }
-
-        .card p.card__icons a {
-            margin-right: 5px;
-        }
-
-/* Resizing */
-
+/* Small-screen layout and frame spacing */
 @media only screen and (max-width: 700px) {
-
-    body {
+  body {
     padding: 0;
-    margin: 0
-}
-    main, main.home {
-        display: block;
-        margin: 32px 16px;
-    }
+    margin: 0;
+  }
 
-    .page__container {
-        margin: 0 16px;
-    }
+  main, main.home {
+    display: block;
+    margin: 32px 16px;
+  }
 
-    main.page {
-        width: 100%;
-        margin: 32px auto 0 auto;
-    }
+  .page__container {
+    margin: 0 16px;
+  }
 
+  main.page {
+    width: 100%;
+    margin: 32px auto 0 auto;
+  }
 
-        main.lpage {
-        width: 100%;
-        margin: 32px auto 0 auto;
-    }
+  main.lpage {
+    width: 100%;
+    margin: 32px auto 0 auto;
+  }
 
-        main > .card__wrapper {
-            width: 100%;
-        }
+  main > .card__wrapper {
+    width: 100%;
+  }
 
-    .card {
-        flex-direction: column
-    }
+  .card {
+    flex-direction: column;
+  }
 
-        .card > .card__description, .card > .card__image {
-            width: 80%;
-             margin: 10px auto 0 auto;
-        }
+  .card > .card__description, .card > .card__image {
+    width: 80%;
+    margin: 10px auto 0 auto;
+  }
 
-        .card .card__image img {
-            width: 100%;
-            margin: 0px auto 0 auto;
-        }
-}
+  .card .card__image img {
+    width: 100%;
+    margin: 0px auto 0 auto;
+  }
 
-
-/* Keep the frame inside the viewport on small screens. */
-@media only screen and (max-width: 700px) {
   .home .card__wrapper::before,
-  .page .page__container::before {
+    .page .page__container::before {
     inset: -8px;
   }
 

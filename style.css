@@ -18,8 +18,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --page-background: #000000;
-    --card-background: #000000;
+    --page-background: #090807;
+    --card-background: #1C1815;
     --text-color: #EEE9DB;
     --heading-color: #EEE9DB;
     --link-color: #D8BC75;

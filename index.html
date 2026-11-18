@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Ivan Di Liberti</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" />
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css" />
     <link rel="stylesheet" href="./style.css" />
@@ -53,7 +53,13 @@
                     </div>
                 </div>
                 <div class="card__image">
-                    <img src="P5.png" title="art by Oswaldo Kato" alt=""  height="320" frameBorder="0" class="giphy-embed" id="beast">
+                    <picture>
+                        <source media="(prefers-color-scheme: dark)"
+                                srcset="P6.png" data-hover="gifs/P6.gif">
+                        <img id="beast" class="giphy-embed"
+                             src="P5.png" data-hover="gifs/ezgif-4-2a966d9e45.gif"
+                             alt="" title="art by Oswaldo Kato" height="320">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -69,21 +75,29 @@
         gtag('config', 'UA-111025443-1');
     </script>
     <script type="text/javascript">
-        const beast = document.getElementById("beast")
-        beast.addEventListener(
-        "mouseover",
-        (event) => {
-            event.target.src = "gifs/ezgif-4-2a966d9e45.gif"
-        },
-        false
-        );
-        beast.addEventListener(
-        "mouseout",
-        (event) => {
-            event.target.src = "P5.png"
-        },
-        false
-        );
+        const beast = document.getElementById("beast");
+        const night = beast.parentElement.querySelector("source");
+        const dayStill = beast.getAttribute("src");
+        const nightStill = night.srcset;
+
+        beast.addEventListener("mouseenter", () => {
+            night.srcset = night.dataset.hover;
+            beast.src = beast.dataset.hover;
+        });
+
+        beast.addEventListener("mouseleave", () => {
+            night.srcset = nightStill;
+            beast.src = dayStill;
+        });
+
+        // Use the existing animation until the night GIF is available.
+        beast.addEventListener("error", () => {
+            if (night.dataset.hover !== beast.dataset.hover &&
+                beast.currentSrc === new URL(night.dataset.hover, document.baseURI).href) {
+                night.dataset.hover = beast.dataset.hover;
+                night.srcset = beast.matches(":hover") ? beast.dataset.hover : nightStill;
+            }
+        });
     </script>
   
 

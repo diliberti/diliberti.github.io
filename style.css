@@ -1,94 +1,129 @@
+/* Day palette: softened vermilion and cream. */
+:root {
+  color-scheme: light;
+  --page-background: #C6533F;
+  --card-background: #F7EEDB;
+  --text-color: #3A231F;
+  --heading-color: #B93424;
+  --link-color: #A32D23;
+  --hover-color: #3A231F;
+  --focus-color: #A32D23;
+  --frame-border: rgb(95 26 18 / 30%);
+  --section-border: rgb(58 35 31 / 35%);
+  --content-border: rgb(58 35 31 / 30%);
+  --frame-highlight: rgb(255 255 255 / 40%);
+  --frame-shadow: rgb(95 26 18 / 8%);
+}
+
+/* Night palette: pure black, warm ivory, and muted gold. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --page-background: #000000;
+    --card-background: #000000;
+    --text-color: #EEE9DB;
+    --heading-color: #EEE9DB;
+    --link-color: #D8BC75;
+    --hover-color: #EEE9DB;
+    --focus-color: #D8BC75;
+    --frame-border: #393120;
+    --section-border: rgb(238 233 219 / 25%);
+    --content-border: rgb(238 233 219 / 25%);
+    --frame-highlight: transparent;
+    --frame-shadow: transparent;
+  }
+}
+
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
   text-align: justify;
   text-justify: inter-word;
- font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
-  background-color: #F6DDCC;
-  color: #1B2631;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  background-color: var(--page-background);
+  color: var(--text-color);
+}
 
-
-  a:link {
-  color: #1B2631;
+body a:link,
+body a:visited {
+  color: var(--link-color);
   background-color: transparent;
   text-decoration: none;
 }
 
-a:visited {
-  color:#1B2631;
-  background-color: transparent;
-  text-decoration: none;
+body a:hover {
+  color: var(--hover-color);
 }
 
-a:hover {
-  color: #5D6D7E;
-  background-color: transparent;
-  text-decoration: none;
-}
+body a:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 4px;
 }
 
-.home .card__wrapper {
+body h1,
+body h2,
+body h3 {
+  color: var(--heading-color);
+}
+
+body h1 a:link,
+body h1 a:visited,
+body h2 a:link,
+body h2 a:visited,
+body h3 a:link,
+body h3 a:visited {
+  color: inherit;
+}
+
+body h1 a:hover,
+body h2 a:hover,
+body h3 a:hover {
+  color: var(--hover-color);
+}
+
+/* Frame the home, standard, and wider page layouts. */
+.home .card__wrapper,
+.page .page__container,
+main.lpage {
   position: relative;
   isolation: isolate;
 }
 
-.home .card__wrapper::before {
+.home .card__wrapper::before,
+.page .page__container::before,
+main.lpage::before {
   content: "";
   position: absolute;
   inset: -28px;
-  background-color: rgb(104 76 57 / 3%);
-  border: 1px solid rgb(104 76 57 / 18%);
+  background-color: var(--card-background);
+  border: 1px solid var(--frame-border);
   border-radius: 24px;
   box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 30%),
-    0 2px 6px rgb(104 76 57 / 5%);
-  pointer-events: none;
-  z-index: -1;
-}
-
-
-.page .page__container {
-  position: relative;
-  isolation: isolate;
-}
-
-.page .page__container::before {
-  content: "";
-  position: absolute;
-  inset: -28px;
-  background-color: rgb(104 76 57 / 3%);
-  border: 1px solid rgb(104 76 57 / 18%);
-  border-radius: 24px;
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 30%),
-    0 2px 6px rgb(104 76 57 / 5%);
+    inset 0 1px 0 var(--frame-highlight),
+    0 2px 6px var(--frame-shadow);
   pointer-events: none;
   z-index: -1;
 }
 
 /* Expandable sections */
-
 .expandable {
-  margin: 1.5rem 0 2rem;:contentReference[oaicite:1]{index=1}49, 0.35);
-  border-bottom: 1px solid rgba(27, 38, 49, 0.35);
+  margin: 1.5rem 0 2rem;
+  border-bottom: 1px solid var(--section-border);
 }
 
 .expandable > summary {
   position: relative;
   display: block;
   padding: 0.85rem 2rem 0.85rem 0;
-
   cursor: pointer;
   list-style: none;
-
   font-size: 20px;
   line-height: 1.25;
   text-align: left;
-
   transition: color 0.15s ease;
 }
 
-/* Remove the browser's default triangle */
+/* Remove the browser's default triangle. */
 .expandable > summary::-webkit-details-marker {
   display: none;
 }
@@ -103,11 +138,9 @@ a:hover {
   position: absolute;
   right: 0.25rem;
   top: 50%;
-
   font-size: 24px;
   font-weight: normal;
   line-height: 1;
-
   transform: translateY(-50%);
 }
 
@@ -116,20 +149,18 @@ a:hover {
 }
 
 .expandable > summary:hover {
-  color: #5D6D7E;
+  color: var(--link-color);
 }
 
 .expandable > summary:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--focus-color);
   outline-offset: 4px;
 }
 
-/* Expanded text */
 .expandable__content {
   margin: 0 0 0.9rem 0;
   padding: 0.05rem 0 0.05rem 1rem;
-
-  border-left: 2px solid rgba(27, 38, 49, 0.3);
+  border-left: 2px solid var(--content-border);
 }
 
 .expandable__content p:first-child {
@@ -140,48 +171,12 @@ a:hover {
   margin-bottom: 0.4rem;
 }
 
-/* Match the existing dark mode */
-@media (prefers-color-scheme: dark) {
-  .expandable {
-    border-color: rgba(235, 222, 240, 0.35);
-  }
-
-  .expandable > summary:hover {
-    color: #c0b5c4;
-  }
-
-  .expandable__content {
-    border-left-color: rgba(235, 222, 240, 0.3);
-  }
+/* Keep paper links visibly identifiable in either palette. */
+body .expandable__content a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
-
-
-@media (prefers-color-scheme: dark) {
-  body{
-  background-color: #17202A;
-  color: #EBDEF0;
-
-  a:link {
-  color: #EBDEF0;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color:#EBDEF0;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #c0b5c4;
-  background-color: transparent;
-  text-decoration: none;
-}
-  }
-}
-
-
 
     body.home__body {
         min-height: 100%;
@@ -364,4 +359,17 @@ p {
             width: 100%;
             margin: 0px auto 0 auto;
         }
+}
+
+
+/* Keep the frame inside the viewport on small screens. */
+@media only screen and (max-width: 700px) {
+  .home .card__wrapper::before,
+  .page .page__container::before {
+    inset: -8px;
+  }
+
+  main.lpage::before {
+    inset: -8px 8px;
+  }
 }
